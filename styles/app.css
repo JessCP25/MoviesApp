@@ -27,6 +27,7 @@
 
 html {
   background-color: var(--purple-medium-3);
+  font-size: 62.5%;
 }
 
 body {
@@ -45,7 +46,7 @@ h1, h2, h3 {
 }
 
 h1, h2 {
-  font-size: 24px;
+  font-size: 3rem;
   color: var(--purple-dark-2);
   font-family: var(--font-family-titles);
   font-weight: var(--font-weight-title1);
@@ -54,7 +55,7 @@ h1, h2 {
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 2.3rem;
   color: var(--purple-dark-1);
   font-weight: var(--font-weight-title2);
 }
@@ -87,6 +88,10 @@ button {
   cursor: pointer;
 }
 
+header, section{
+  max-width: 1024px;
+  margin: 0 auto;
+}
 
 /* Shared */
 .header-container, .trendingPreview-header, .categoriesPreview-container {
@@ -191,7 +196,7 @@ button {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  height: 241px;
+  height: 394px;
   padding-left: 24px;
   padding-bottom: 16px;
 }
@@ -214,22 +219,22 @@ button {
 
 .trendingPreview-movieList .movie-container {
   display: inline-block;
-  margin-right: 8px;
+  margin-right: 15px;
 }
 
 .trendingPreview-movieList .movie-container .movie-img {
-  height: 225px;
+  height: 375px;
   min-height: 225px;
-  max-height: 225px;
-  width: 150px;
+  max-height: 375px;
+  width: 250px;
   min-width: 150px;
-  max-width: 150px;
+  max-width: 250px;
 }
 
 
 /* Categories */
 .category-container {
-  width: 45%;
+  width: 30%;
 }
 
 .category-title {
@@ -278,11 +283,16 @@ button {
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 32px 24px;
+  gap: 40px;
 }
 
 .genericList-container .movie-container {
   display: inline-block;
-  width: 47.5%;
+  width: 280px;
+}
+
+.genericList-container .movie-container:hover{
+  opacity: 0.6;
 }
 
 .genericList-container .movie-img {
@@ -306,6 +316,7 @@ button {
   width: 80%;
   margin: 0 0 16px 0;
   padding: 0;
+  color: var(--yellow)
 }
 
 .movieDetail-score {
@@ -340,6 +351,21 @@ button {
   white-space: nowrap;
   width: calc(100vw - 24px);
   padding-bottom: 16px;
+}
+.relatedMovies-scrollContainer::-webkit-scrollbar {
+  height: 8px; /* Altura de la barra de desplazamiento */
+}
+
+.relatedMovies-scrollContainer::-webkit-scrollbar-track {
+  background-color: var(--purple-light-1); /* Color de fondo de la barra de desplazamiento */
+}
+
+.relatedMovies-scrollContainer::-webkit-scrollbar-thumb {
+  background-color: var(--purple-light-2); /* Color del pulgar de la barra de desplazamiento */
+}
+
+.relatedMovies-scrollContainer::-webkit-scrollbar-thumb:hover {
+  background-color: var(--purple-medium-3); /* Color del pulgar de la barra de desplazamiento al pasar el cursor sobre él */
 }
 
 .relatedMovies-scrollContainer .movie-container {
