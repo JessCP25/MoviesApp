@@ -109,4 +109,5 @@ async function getSimilarMovies(id){
     const {data} = await api(`movie/${id}/similar`);
     const movies = data.results;
     renderMovies(movies,relateMoviesContainer);
+    window.scrollTo(0, 0);
 }
