@@ -1,5 +1,6 @@
 /* General */
-* { box-sizing: border-box; }
+* { box-sizing: border-box;
+}
 
 :root {
   --purple-light-1: #1b1b1b;
@@ -129,7 +130,6 @@ header, section{
 }
 
 .header-container--long {
-  background-image: url('https://pics.filmaffinity.com/Deadpool-777527803-large.jpg');
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 19.27%, rgba(0, 0, 0, 0) 29.17%), url(https://pics.filmaffinity.com/Deadpool-777527803-large.jpg);
   background-size: cover !important;
   height: 480px;
@@ -248,7 +248,7 @@ header, section{
 }
 
 .category-title::before {
-  content: 'â€¢â€¢â€¢â€¢';
+  content: 'â€';
   color: transparent;
   /* TODO: cambiar color por ID de la categorÃ­a */
   background-color: var(--idColor);
@@ -396,6 +396,52 @@ footer {
   align-items: center;
 }
 
+/* LOADING SKELETONS */
+/* Estilos del loading skeleton */
+.loading-skeleton {
+  width: 250px;
+  height: 380px; /* Altura del loading skeleton */
+  background-color: rgba(66, 66, 66, 0.527); /* Color de fondo del loading skeleton */
+  border-radius: 8px; /* Borde redondeado */
+  animation: loadingAnimation 1.5s infinite; /* Animación que simula la carga */
+  margin-right: 15px; /* Espaciado entre loading skeletons */
+}
+.loading-skeleton__categories{
+  height: 30px; /* Altura del loading skeleton */
+  background-color: rgba(66, 66, 66, 0.527); /* Color de fondo del loading skeleton */
+  border-radius: 8px; /* Borde redondeado */
+  animation: loadingAnimation 1.5s infinite;
+  margin-bottom: 10px;
+}
+.loading-skeleton__related{
+  width: 125px;
+  height: 192px; /* Altura del loading skeleton */
+  background-color: rgba(66, 66, 66, 0.527); /* Color de fondo del loading skeleton */
+  border-radius: 4px; /* Borde redondeado */
+  animation: loadingAnimation 1.5s infinite; /* Animación que simula la carga */
+  margin-right: 8px;
+}
+.loading-skeleton:nth-child(2n), .loading-skeleton__categories:nth-child(2n), .loading-skeleton__related:nth-child(2n){
+ animation-delay: .2s;
+}
+.loading-skeleton:nth-child(2n+1), .loading-skeleton__categories:nth-child(2n+1), .loading-skeleton__related:nth-child(2n+1){
+  animation-delay: .4s;
+ }
+/* Animación del loading skeleton */
+@keyframes loadingAnimation {
+  0%, 100% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
+}
+
+@media(max-width: 478px){
+  .category-container{
+    width: 45%;
+  }
+}
 
 /* Navigation */
 .inactive {

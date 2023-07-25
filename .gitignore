@@ -131,3 +131,6 @@ dist
 
 # secrets.js API-KEY
 src/secrets.js
+
+#VSCODE
+.vscode
