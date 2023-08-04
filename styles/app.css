@@ -95,24 +95,48 @@ header, section{
 }
 
 /* Shared */
-.header-container, .trendingPreview-header, .categoriesPreview-container {
+.header-container, .trendingPreview-header, .categoriesPreview-container, .liked-header {
   padding: 0 24px;
 }
 
-.trendingPreview-container, .categoriesPreview-container, footer {
+.trendingPreview-container, .categoriesPreview-container, .liked-container, footer {
   margin-top: 48px;
 }
 
-.trendingPreview-header, .categoriesPreview-title {
+.trendingPreview-header, .categoriesPreview-title, .liked-title {
   margin-bottom: 24px;
 }
 
 .movie-container {
   cursor: pointer;
+  position: relative;
 }
 
 .movie-img {
   border-radius: 8px;
+}
+
+/* BOTON MOVIE */
+.movie-btn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 35px;
+  width: 35px;
+  border-radius: 35px;
+  box-shadow: 3px 3px 15px 3px rgba(0,0,0,0.75);
+  cursor: pointer;
+}
+.movie-btn::before{
+  content: '🖤';
+  font-size: 16px;
+}
+.movie-btn--liked{
+  background-color: var(--purple-light-2);
+}
+.movie-btn--liked::before{
+  content: '🧡';
+  font-size: 16px;
 }
 
 .categoriesPreview-list, .categories-list {
@@ -178,7 +202,7 @@ header, section{
 
 
 /* Trending */
-.trendingPreview-header {
+.trendingPreview-header,.liked-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -190,7 +214,7 @@ header, section{
   width: 72px;
 }
 
-.trendingPreview-movieList {
+.trendingPreview-movieList, .liked-movieList{
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -215,7 +239,24 @@ header, section{
   background-color: var(--purple-medium-3); /* Color del pulgar de la barra de desplazamiento al pasar el cursor sobre él */
 }
 
-.trendingPreview-movieList .movie-container {
+/* LIKED MOVIES SCROLL */
+
+.liked-movieList::-webkit-scrollbar {
+  height: 8px; /* Altura de la barra de desplazamiento */
+}
+.liked-movieList::-webkit-scrollbar-track {
+  background-color: var(--purple-light-1); /* Color de fondo de la barra de desplazamiento */
+}
+
+.liked-movieList::-webkit-scrollbar-thumb {
+  background-color: var(--purple-light-2); /* Color del pulgar de la barra de desplazamiento */
+}
+
+.liked-movieList::-webkit-scrollbar-thumb:hover {
+  background-color: var(--purple-medium-3); /* Color del pulgar de la barra de desplazamiento al pasar el cursor sobre él */
+}
+
+.trendingPreview-movieList .movie-container,.liked-movieList .movie-container {
   display: inline-block;
   margin-right: 15px;
 }
@@ -224,7 +265,7 @@ header, section{
   opacity: 0.6;
 }
 
-.trendingPreview-movieList .movie-container .movie-img {
+.trendingPreview-movieList .movie-container .movie-img, .liked-movieList .movie-container .movie-img {
   height: 375px;
   min-height: 225px;
   max-height: 375px;
@@ -299,6 +340,7 @@ header, section{
 
 .genericList-container .movie-img {
   width: 100%;
+  min-height: 400px ;
 }
 
 

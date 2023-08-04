@@ -129,8 +129,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# secrets.js API-KEY
-src/secrets.js
+# # secrets.js API-KEY
+# src/secrets.js
 
 #VSCODE
 .vscode
